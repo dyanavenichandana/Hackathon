@@ -9,6 +9,10 @@ import About from './components/about/About.jsx'
 import Contact from './components/contact/Contact.jsx'
 
 import Login from './components/Login.jsx'
+
+import Profile from './components/UserComponents/Profile.jsx'
+import UserLayout from './components/UserComponents/UserLayout.jsx'
+import Register from './components/Register.jsx'
 const router =createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -18,9 +22,14 @@ const router =createBrowserRouter(
        <Route path='contact' element={<Contact/>}/>
        
     </Route>
-     <Route path='/user' >
+    <Route path='/user' >
      <Route path='login' element={<Login/>}/>
-  </Route>
+     <Route path='register' element={<Register/>}/>
+    </Route>
+    <Route path='/user/id' element={<UserLayout/>} >
+    <Route path='profile' element={<Profile/>}/>
+    </Route>
+  
   </>
   )
 )

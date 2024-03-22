@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link} from 'react-router-dom'
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,24 +15,11 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen  bg-slate-900 flex items-center justify-center">
+    <div className="min-h-screen  bg-slate-900 flex items-center justify-center ">
       <form onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-2xl shadow-md w-full sm:w-96"
+        className="bg-white p-8 rounded-2xl shadow-md w-full sm:w-96 mt-5"
       >
-        <h3 className="mb-4 text-2xl font-semibold text-center">Sign In</h3>
-       
-        <button
-          type="button"
-          className="flex items-center justify-center w-full py-4 mb-6 text-sm font-medium transition duration-300 rounded-2xl  bg-rose-200 hover:bg-rose-400 focus:ring-4 focus:ring-rose-300"
-        >
-          <img className="h-5 mr-2" src="https://raw.githubusercontent.com/Loopple/loopple-public-assets/main/motion-tailwind/img/logos/logo-google.png" alt="Google" />
-          Sign in with Google
-        </button>
-        <div className="flex items-center mb-3">
-          <hr className="h-0 border-b border-solid border-rose-500 grow" />
-          <p className="mx-4 text-rose-600">or</p>
-          <hr className="h-0 border-b border-solid border-rose-500 grow" />
-        </div>
+        <h3 className="mb-4 text-2xl font-semibold text-center">Login</h3>
         <label htmlFor="email" className= " mx-2 text-sm text-gray-900 ">
           Email
         </label>
@@ -79,13 +66,14 @@ const Login = () => {
           type="submit"
           className="w-full px-6 py-5 mb-5 text-sm font-bold leading-none  transition duration-300 md:w-45 rounded-2xl hover:bg-rose-600 focus:ring-4 focus:ring-purple-100 bg-rose-200"
         >
-          Sign In
+          Log In
         </button>
         <p className="text-sm leading-relaxed text-gray-900">
           Not registered yet?{' '}
-          <a href="javascript:void(0)" className="font-bold text-gray-700">
+          <Link to="/user/register" className="font-bold text-gray-700">
             Create an Account
-          </a>
+          </Link>
+          
         </p>
  
       </form>
